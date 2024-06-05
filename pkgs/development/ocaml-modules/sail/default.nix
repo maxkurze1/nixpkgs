@@ -4,6 +4,7 @@
 , base64
 , omd
 , menhir
+, menhirLib
 , ott
 , linenoise
 , dune-site
@@ -18,13 +19,13 @@
 
 buildDunePackage rec {
   pname = "sail";
-  version = "0.16";
+  version = "0.17.1";
 
   src = fetchFromGitHub {
     owner = "rems-project";
     repo = "sail";
     rev = version;
-    hash = "sha256-HY/rgWi0S7ZiAWZF0fVIRK6fpoJ7Xp5EQcxoPRCPJ5Y=";
+    hash = "sha256-wnjiIadTE5FoTrX7hl2Ulk8vA80AdJRvtmaN+2kQFWY=";
   };
 
   minimalOCamlVersion = "4.08";
@@ -44,6 +45,7 @@ buildDunePackage rec {
     pprint
     linksem
     yojson
+    menhirLib
   ];
 
   preBuild = ''
